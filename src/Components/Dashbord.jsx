@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { jwtDecode } from "jwt-decode";
+import React, { useEffect, useContext } from "react";
+
 import Cookies from "js-cookie";
+import { UserContext } from "../assets/AuthContext";
+import Qr from "./Qr";
 
 const Dashbord = () => {
-  useEffect(() => {
-    const token = Cookies.get("token"); // your JWT token
+  const { userData } = useContext(UserContext);
 
-    if (token) {
-      const decoded = jwtDecode(token);
-      console.log(decoded); // decoded payload object
-    }
-  });
-
-  return <>Hwllo</>;
+  return (
+    <>
+      {userData.name}
+      
+    </>
+  );
 };
 
 export default Dashbord;

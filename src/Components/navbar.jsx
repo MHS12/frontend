@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const Navbar = () => {
-  const { isLoggedIn,setIsLoggedIn } = useContext(UserContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const nav = useNavigate();
   return (
     <>
@@ -19,14 +19,16 @@ const Navbar = () => {
             <button
               onClick={() => {
                 Cookies.remove("token");
-                setIsLoggedIn(false)
-                nav("/login")
+                setIsLoggedIn(false);
+                nav("/login");
               }}
             >
               Logout
             </button>
           )}
           <Link to="/dashbord">Dashbord</Link>
+          <Link to="/genqr">G</Link>
+          <Link to="/scanqr">Scan</Link>
         </ul>
       </div>
     </>

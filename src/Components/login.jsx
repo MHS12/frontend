@@ -42,7 +42,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="h-screen flex justify-center items-center ">
+    <div className="h-[90vh] flex justify-center items-center ">
       <form onSubmit={onsubmithandel}>
         <div className="bg-gray-200 p-6 rounded-lg flex flex-col gap-4">
           <label htmlFor="email">Email:</label>
